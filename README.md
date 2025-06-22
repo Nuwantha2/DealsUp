@@ -51,7 +51,7 @@ This app includes:
 
 | Welcome | Sign In | Sign Up |
 |--------|---------|---------|
-| ![Welcome](Screenshots/welcome.png) | ![Sign In](Screenshots/signin.png) | ![Sign Up](Screenshots/signup.png) |
+| ![Welcome](Screenshots/splash.png) | ![Sign In](Screenshots/signin.png) | ![Sign Up](Screenshots/signup.png) |
 
 | Choose Cards | Dashboard | Map View |
 |--------------|-----------|----------|
@@ -63,7 +63,7 @@ This app includes:
 
 | Profile | Preferences | Delete Account |
 |---------|-------------|----------------|
-| ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) | ![Delete](Screenshots/delete_account.png) |
+| ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) |
 
 ---
 
