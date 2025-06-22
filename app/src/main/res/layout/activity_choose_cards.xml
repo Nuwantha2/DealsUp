@@ -1,0 +1,141 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="25dp">
+
+        <ImageView
+            android:layout_width="293dp"
+            android:layout_height="103dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="DealsUp Logo"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Choose Your Credit Card Providers"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:rowOrderPreserved="false">
+
+
+            <ImageButton
+                android:id="@+id/btnBOC"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="BOC"
+                android:scaleType="fitCenter"
+                android:src="@drawable/boc" />
+
+            <ImageButton
+                android:id="@+id/btnPB"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="PB"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pb" />
+
+            <ImageButton
+                android:id="@+id/btnSampath"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="Sampath"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sampath" />
+
+            <ImageButton
+                android:id="@+id/btnDFCC"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="DFCC"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dfcc" />
+
+            <ImageButton
+                android:id="@+id/btnHNB"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="HNB"
+                android:scaleType="fitCenter"
+                android:src="@drawable/hnb" />
+
+            <ImageButton
+                android:id="@+id/btnNDB"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="NDB"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ndb" />
+
+            <ImageButton
+                android:id="@+id/btnCommercial"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="Commercial"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/commercial" />
+
+            <ImageButton
+                android:id="@+id/btnNTB"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/card_background"
+                android:contentDescription="NTBl"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ntb" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FFD700"
+            android:text="Continue"
+            android:textColor="#000" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard"
+    tools:context=".Dashboard">
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good day, 😎"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuwantha !"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@null"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <Button
+        android:id="@+id/updateProfile"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableEnd="@drawable/next"
+        android:text="Update Your Profile"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/notificationPref"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableEnd="@drawable/next"
+        android:text="Notification Preferences"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/contactAdmin"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableEnd="@drawable/next"
+        android:text="Contact Admin/Support"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/deleteAccount"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableEnd="@drawable/nextred"
+        android:text="Delete Account"
+        android:textAlignment="textStart"
+        android:textColor="#FB1100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614"
+        app:strokeColor="#FF0000"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/UpdateCards"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableEnd="@drawable/next"
+        android:text="Update Owned Credit Card List"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#FF0000"
+        android:drawableEnd="@drawable/nextwhite"
+        android:text="SignOut"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702"
+        app:strokeWidth="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

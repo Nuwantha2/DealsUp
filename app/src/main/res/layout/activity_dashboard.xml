@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard"
+    tools:context=".Dashboard">
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good day, 😎"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuwantha !"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <ImageView
+        android:id="@+id/notificationIcon"
+        android:layout_width="28dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="127dp"
+        android:contentDescription="Notifications"
+        android:src="@drawable/notification"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Latest Deals"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
+
+    <Spinner
+        android:id="@+id/spinnerCardType"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/spinner_background"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/spinnerCategory"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Spinner: Category -->
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/spinner_background"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintStart_toEndOf="@id/spinnerCardType"
+        app:layout_constraintEnd_toStartOf="@id/spinnerLocation"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Spinner: Location -->
+    <Spinner
+        android:id="@+id/spinnerLocation"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/spinner_background"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/spinnerCategory"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDeals"
+        android:layout_width="384dp"
+        android:layout_height="393dp"
+        android:layout_marginTop="14dp"
+        android:clipToPadding="false"
+        android:padding="12dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLocation"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@null"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

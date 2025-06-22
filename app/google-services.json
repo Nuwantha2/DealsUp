@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7383951813",
+    "project_id": "dealsup-4ec67",
+    "storage_bucket": "dealsup-4ec67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7383951813:android:85ba9dcc1e7c7e87dd43ac",
+        "android_client_info": {
+          "package_name": "com.s23010901.dealsup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWbHN68S7p5A8UPJ9e56Ji4-CIq9BagAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
