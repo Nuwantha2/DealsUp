@@ -58,11 +58,11 @@ This app includes:
 | ![Cards](Screenshots/choose_cards.png) | ![Dashboard](Screenshots/dashboard.png) | ![Map](Screenshots/map_view.png) |
 
 | Deal Card | Notifications |
-|-----------|--------------------|---------------|
+|-----------|--------- -----|
 | ![Deal](Screenshots/deal_card.png)  | ![Notifications](Screenshots/notifications.png) |
 
 | Profile | Preferences |
-|---------|-------------|----------------|
+|---------|-------------|
 | ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) |
 
 ---
