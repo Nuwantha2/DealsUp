@@ -7,11 +7,11 @@ An Android mobile app that helps users discover real-time credit card offers and
 ## 📌 Project Overview
 
 This app includes:
-- 🔐 **Secure login and signup** using Firebase
-- 🗺️ **Smart location-based deal detection** with accelerometer integration
-- 💳 **Card selection system** to filter deals relevant to the user
-- 🔔 **Push notifications** (even when app is closed) for nearby deals
-- 📬 **Notification history**, user preferences, and account management features
+- 🔐 **Secure login and signup** using Firebase  
+- 🗺️ **Smart location-based deal detection** with accelerometer integration  
+- 💳 **Card selection system** to filter deals relevant to the user  
+- 🔔 **Push notifications** (even when app is closed) for nearby deals  
+- 📬 **Notification history**, user preferences, and account management features  
 
 ---
 
@@ -49,21 +49,35 @@ This app includes:
 
 ## 🧪 Screenshots
 
+### 🏁 Welcome & Auth
+
 | Welcome | Sign In | Sign Up |
 |--------|---------|---------|
-| ![Welcome](Screenshots/splash.png) | ![Sign In](Screenshots/signin.png) | ![Sign Up](Screenshots/signup.png) |
+| ![](Screenshots/splash.png) | ![](Screenshots/signin.png) | ![](Screenshots/signup.png) |
 
-| Choose Cards | Dashboard | Map View |
-|--------------|-----------|----------|
-| ![Cards](Screenshots/choose_cards.png) | ![Dashboard](Screenshots/dashboard.png) | ![Map](Screenshots/map_view.png) |
+### 💳 Choose Cards
+
+| Choose Cards |
+|--------------|
+| ![](Screenshots/choose_cards.png) |
+
+### 🏠 Dashboard & Map
+
+| Dashboard | Map View |
+|-----------|----------|
+| ![](Screenshots/dashboard.png) | ![](Screenshots/map_view.png) |
+
+### 🛍️ Deals & Notifications
 
 | Deal Card | Notifications |
-|-----------|--------- -----|
-| ![Deal](Screenshots/deal_card.png)  | ![Notifications](Screenshots/notifications.png) |
+|-----------|---------------|
+| ![](Screenshots/deal_card.png) | ![](Screenshots/notifications.png) |
+
+### 👤 Profile & Settings
 
 | Profile | Preferences |
 |---------|-------------|
-| ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) |
+| ![](Screenshots/profile.png) | ![](Screenshots/notification_pref.png) |
 
 ---
 
