@@ -51,19 +51,19 @@ This app includes:
 
 | Welcome | Sign In | Sign Up |
 |--------|---------|---------|
-| ![Welcome](screenshots/welcome.png) | ![Sign In](screenshots/signin.png) | ![Sign Up](screenshots/signup.png) |
+| ![Welcome](Screenshots/welcome.png) | ![Sign In](Screenshots/signin.png) | ![Sign Up](Screenshots/signup.png) |
 
 | Choose Cards | Dashboard | Map View |
 |--------------|-----------|----------|
-| ![Cards](screenshots/choose_cards.png) | ![Dashboard](screenshots/dashboard.png) | ![Map](screenshots/map_view.png) |
+| ![Cards](Screenshots/choose_cards.png) | ![Dashboard](Screenshots/dashboard.png) | ![Map](Screenshots/map_view.png) |
 
 | Deal Card | Notification Popup | Notifications |
 |-----------|--------------------|---------------|
-| ![Deal](screenshots/deal_card.png) | ![Alert](screenshots/notification_alert.png) | ![History](screenshots/notifications_list.png) |
+| ![Deal](Screenshots/deal_card.png)  | ![Notifications](Screenshots/notifications.png) |
 
 | Profile | Preferences | Delete Account |
 |---------|-------------|----------------|
-| ![Profile](screenshots/profile.png) | ![Prefs](screenshots/notification_pref.png) | ![Delete](screenshots/delete_account.png) |
+| ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) | ![Delete](Screenshots/delete_account.png) |
 
 ---
 
