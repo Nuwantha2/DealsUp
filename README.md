@@ -45,39 +45,6 @@ This app includes:
 - Update profile, contact admin, delete account  
 - Control notification and smart alert preferences  
 
----
-
-## 🧪 Screenshots
-
-### 🏁 Welcome & Auth
-
-| Welcome | Sign In | Sign Up |
-|--------|---------|---------|
-| ![](Screenshots/splash.png) | ![](Screenshots/signin.png) | ![](Screenshots/signup.png) |
-
-### 💳 Choose Cards
-
-| Choose Cards |
-|--------------|
-| ![](Screenshots/choose_cards.png) |
-
-### 🏠 Dashboard & Map
-
-| Dashboard | Map View |
-|-----------|----------|
-| ![](Screenshots/dashboard.png) | ![](Screenshots/map_view.png) |
-
-### 🛍️ Deals & Notifications
-
-| Deal Card | Notifications |
-|-----------|---------------|
-| ![](Screenshots/deal_card.png) | ![](Screenshots/notifications.png) |
-
-### 👤 Profile & Settings
-
-| Profile | Preferences |
-|---------|-------------|
-| ![](Screenshots/profile.png) | ![](Screenshots/notification_pref.png) |
 
 ---
 
@@ -99,3 +66,24 @@ This app includes:
 1. Clone this repository:
    ```bash
    git clone https://github.com/Nuwantha2/DealsUp.git
+   Open the project in Android Studio
+
+2. Add your Firebase google-services.json file to the /app directory
+
+3. Enable the following in Firebase Console:
+
+4. Firebase Authentication (Email/Password)
+
+5. Cloud Firestore
+
+6. Firebase Cloud Messaging
+
+7. Build and run the app on a device or emulator with location access
+
+---
+
+📬 Contact
+For any feedback or support, please contact:
+📧 nuwanthadanajayabandara@gmail.com
+
+Developed by @Nuwantha2 with ❤️
