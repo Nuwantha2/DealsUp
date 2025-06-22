@@ -57,11 +57,11 @@ This app includes:
 |--------------|-----------|----------|
 | ![Cards](Screenshots/choose_cards.png) | ![Dashboard](Screenshots/dashboard.png) | ![Map](Screenshots/map_view.png) |
 
-| Deal Card | Notification Popup | Notifications |
+| Deal Card | Notifications |
 |-----------|--------------------|---------------|
 | ![Deal](Screenshots/deal_card.png)  | ![Notifications](Screenshots/notifications.png) |
 
-| Profile | Preferences | Delete Account |
+| Profile | Preferences |
 |---------|-------------|----------------|
 | ![Profile](Screenshots/profile.png) | ![Prefs](Screenshots/notification_pref.png) |
 
