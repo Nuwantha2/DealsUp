@@ -1,105 +1,87 @@
-project:
-  title: "💳 DealsUp - Smart Credit Card Deal Finder (Android App)"
-  description: >
-    DealsUp is an Android app that helps users discover personalized credit card offers
-    and store deals based on their current location, motion, and selected bank cards.
+# 💳 DealsUp - Smart Credit Card Deal Finder
 
-features:
-  - 🔐 Firebase-based Login & Registration
-  - 🗺️ Deal discovery based on location (GPS + Accelerometer)
-  - 📍 View deals on a map or in a card list
-  - 💳 Choose your owned credit cards
-  - 🔔 Push notifications for nearby deals (even in background)
-  - ⚙️ Manage notification preferences
-  - 🧾 View all deal notifications history
-  - 🧑‍💼 Contact admin or update profile
-  - ❌ Delete account securely
+An Android mobile app that helps users discover real-time credit card offers and store deals based on their **location**, **motion**, and **bank card preferences**. Built using Firebase, Google Maps, and sensor APIs.
 
-tech_stack:
-  frontend: Android Studio (Java)
-  backend:
-    - Firebase Authentication
-    - Firebase Firestore
-    - Firebase Cloud Messaging (FCM)
-  apis:
-    - Google Maps API
-    - Sensors API (Accelerometer)
+---
 
-workflow:
-  - User registers and selects their owned credit cards.
-  - Deals are filtered and displayed based on location, motion, card type, and category.
-  - Push notifications are triggered when near relevant stores.
-  - Users can view, filter, and manage preferences, profiles, and receive alerts.
+## 📌 Project Overview
 
-screenshots:
-  welcome_auth:
-    - title: Welcome
-      path: screenshots/welcome.png
-    - title: Sign In
-      path: screenshots/signin.png
-    - title: Sign Up
-      path: screenshots/signup.png
-  choose_cards:
-    - title: Choose Cards
-      path: screenshots/choose_cards.png
-  dashboard_filters:
-    - title: Dashboard
-      path: screenshots/dashboard.png
-    - title: Filter by Bank
-      path: screenshots/bank_filter.png
-    - title: Filter by Category
-      path: screenshots/category_filter.png
-    - title: Filter by Location
-      path: screenshots/location_filter.png
-  deals_map:
-    - title: Deal Card
-      path: screenshots/deal_card.png
-    - title: Deal Map View
-      path: screenshots/map_view.png
-    - title: Navigation
-      path: screenshots/navigate.png
-  notifications_profile:
-    - title: Notification Popup
-      path: screenshots/notification_alert.png
-    - title: Notifications Page
-      path: screenshots/notifications_list.png
-    - title: Profile
-      path: screenshots/profile.png
+This app includes:
+- 🔐 **Secure login and signup** using Firebase
+- 🗺️ **Smart location-based deal detection** with accelerometer integration
+- 💳 **Card selection system** to filter deals relevant to the user
+- 🔔 **Push notifications** (even when app is closed) for nearby deals
+- 📬 **Notification history**, user preferences, and account management features
 
-project_structure: |
-  DealsUp/
-  ├── app/
-  │   ├── java/com/s23010901/dealsup/
-  │   │   ├── MainActivity.java
-  │   │   ├── Dashboard.java
-  │   │   ├── DealSensorService.java
-  │   │   ├── NotificationActivity.java
-  │   │   └── ...
-  │   ├── res/
-  │   │   ├── layout/
-  │   │   └── drawable/
-  │   └── AndroidManifest.xml
-  └── README.md
+---
 
-setup_instructions:
-  - Clone repo:
-    - command: git clone https://github.com/Nuwantha2/DealsUp.git
-  - Open in Android Studio
-  - Add your `google-services.json` in `app/`
-  - Enable the following in Firebase Console:
-    - Firebase Authentication
-    - Firebase Firestore
-    - Firebase Cloud Messaging (FCM)
-  - Build and run on a device/emulator
+## 🎯 Key Features
 
-permissions_required:
-  - ACCESS_FINE_LOCATION
-  - ACTIVITY_RECOGNITION
-  - POST_NOTIFICATIONS (Android 13+)
+✅ **Login & Auto Registration**  
+- Firebase Authentication with email/password  
+- Secure login + new user registration system  
 
-smart_deal_detection: >
-  The app uses the accelerometer to detect motion and triggers nearby deal scans via location.
-  Notifications are sent even when the app is closed.
+✅ **Card Selection System**  
+- Users can choose which credit cards they use  
+- Deals filtered based on selected bank cards  
 
-contact:
-  email: nuwanthadanajayabandara@gmail.com
+✅ **Smart Dashboard**  
+- Filters by card type, category, and location  
+- View personalized deals in a list  
+
+✅ **Google Maps Integration**  
+- See nearby deals on a map  
+- Tap to view details and start navigation  
+
+✅ **Sensor-Based Background Alerts**  
+- Uses accelerometer to detect motion  
+- Automatically notifies user if they are near a store with a deal  
+
+✅ **Push Notifications + Notification Center**  
+- Firebase Cloud Messaging (FCM) for alerts  
+- View all received alerts on a notification screen  
+
+✅ **Profile & Preferences**  
+- Update profile, contact admin, delete account  
+- Control notification and smart alert preferences  
+
+---
+
+## 🧪 Screenshots
+
+| Welcome | Sign In | Sign Up |
+|--------|---------|---------|
+| ![Welcome](screenshots/welcome.png) | ![Sign In](screenshots/signin.png) | ![Sign Up](screenshots/signup.png) |
+
+| Choose Cards | Dashboard | Map View |
+|--------------|-----------|----------|
+| ![Cards](screenshots/choose_cards.png) | ![Dashboard](screenshots/dashboard.png) | ![Map](screenshots/map_view.png) |
+
+| Deal Card | Notification Popup | Notifications |
+|-----------|--------------------|---------------|
+| ![Deal](screenshots/deal_card.png) | ![Alert](screenshots/notification_alert.png) | ![History](screenshots/notifications_list.png) |
+
+| Profile | Preferences | Delete Account |
+|---------|-------------|----------------|
+| ![Profile](screenshots/profile.png) | ![Prefs](screenshots/notification_pref.png) | ![Delete](screenshots/delete_account.png) |
+
+---
+
+## ⚙️ Technologies Used
+
+| Area        | Tech Stack                           |
+|-------------|---------------------------------------|
+| Language    | Java (Android SDK)                    |
+| Backend     | Firebase Authentication, Firestore    |
+| Push Alerts | Firebase Cloud Messaging (FCM)        |
+| Maps        | Google Maps API                       |
+| Sensors     | Android Accelerometer API             |
+| UI Layout   | XML (ConstraintLayout, RecyclerView)  |
+
+---
+
+## 🚀 How to Run the Project
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Nuwantha2/DealsUp.git
