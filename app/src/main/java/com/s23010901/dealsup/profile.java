@@ -32,7 +32,7 @@ public class profile extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        // Bind UI
+        // connect UI
         updateProfile = findViewById(R.id.updateProfile);
         updateCards = findViewById(R.id.UpdateCards);
         notificationPref = findViewById(R.id.notificationPref);
@@ -41,7 +41,7 @@ public class profile extends AppCompatActivity {
         signOut = findViewById(R.id.signOut);
         usernameText = findViewById(R.id.username);
 
-        loadUserName(); // Load username from Firestore
+        loadUserName(); // Load username
 
         // Setup navigation
         updateProfile.setOnClickListener(v -> startActivity(new Intent(this, updateProfile.class)));

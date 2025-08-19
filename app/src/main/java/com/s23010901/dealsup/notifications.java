@@ -56,6 +56,7 @@ public class notifications extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                 })
+                //notification loading failed
                 .addOnFailureListener(e ->
                         Toast.makeText(this, "Failed to load notifications: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }

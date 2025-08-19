@@ -50,6 +50,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 
+    //create notification channel
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Deal Alerts";

@@ -18,6 +18,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         this.notifications = notifications;
     }
 
+    //display notifications
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView title, message;
 

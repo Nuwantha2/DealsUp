@@ -61,6 +61,7 @@ public class dealMap extends FragmentActivity implements OnMapReadyCallback {
         });
     }
 
+    //view on google maps
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;

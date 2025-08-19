@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.splashProgress);
 
         new Thread(() -> {
+            //progress bar
             while (progressStatus < 100) {
                 progressStatus += 1;
 

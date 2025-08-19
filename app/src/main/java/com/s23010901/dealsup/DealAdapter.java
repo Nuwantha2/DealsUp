@@ -39,7 +39,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         holder.tvTitle.setText(deal.getTitle());
         holder.tvDescription.setText(deal.getDescription());
 
-        // Load logo image
+        // Load deals logo image
         Glide.with(context)
                 .load(deal.getImageUrl())
                 .placeholder(R.drawable.placeholder)
@@ -67,6 +67,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         });
     }
 
+    //display as list of deals
     @Override
     public int getItemCount() {
         return dealList.size();

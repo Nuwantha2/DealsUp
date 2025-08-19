@@ -20,6 +20,7 @@ public class Deal implements Parcelable {
 
 
 
+    //get deals data
     public Deal(String title, String description, String bank, String category, String location,
                 String imageUrl, double latitude, double longitude) {
         this.title = title;
@@ -31,6 +32,7 @@ public class Deal implements Parcelable {
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
 
     protected Deal(Parcel in) {
         title = in.readString();
@@ -55,7 +57,7 @@ public class Deal implements Parcelable {
         }
     };
 
-    // Getters
+    // get data from firebase
     public String getTitle() { return title; }
     public String getDescription() { return description; }
     public String getBank() { return bank; }

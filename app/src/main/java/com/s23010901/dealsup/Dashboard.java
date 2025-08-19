@@ -44,6 +44,9 @@ public class Dashboard extends AppCompatActivity {
     private String selectedCategory = "Choose category";
     private String selectedLocation = "Choose location";
 
+    // 🔹 Static cache to hold deals in memory
+    private static List<Deal> cachedDeals = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +55,7 @@ public class Dashboard extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Bind views
+        // get username,deals and category,bank and location data
         username = findViewById(R.id.username);
         recyclerView = findViewById(R.id.recyclerDeals);
         spinnerBank = findViewById(R.id.spinnerCardType);
@@ -64,10 +67,10 @@ public class Dashboard extends AppCompatActivity {
         dealAdapter = new DealAdapter(this, allDeals);
         recyclerView.setAdapter(dealAdapter);
 
-        // Open Notifications screen on icon tap
+        // Open Notifications screen
         notificationIcon.setOnClickListener(v -> startActivity(new Intent(this, notifications.class)));
 
-        // Ask for NOTIFICATIONS permission if needed
+        // Ask for notification permission (Android 13+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -79,7 +82,7 @@ public class Dashboard extends AppCompatActivity {
         setupStaticSpinners();
         fetchUserData();
 
-        // Bottom Navigation setup
+        // Bottom navigation
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setSelectedItemId(R.id.nav_home);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -92,7 +95,7 @@ public class Dashboard extends AppCompatActivity {
         });
     }
 
-    //filters
+    // Setup filters
     private void setupStaticSpinners() {
         List<String> categories = new ArrayList<>();
         categories.add("Choose category");
@@ -114,7 +117,8 @@ public class Dashboard extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 selectedCategory = spinnerCategory.getSelectedItem().toString();
                 selectedLocation = spinnerLocation.getSelectedItem().toString();
-                loadDeals();
+                applyFilters(); // 🔹 Filter cached deals instantly
+                refreshDeals(); // 🔹 Update from Firestore in background
             }
 
             @Override
@@ -131,7 +135,22 @@ public class Dashboard extends AppCompatActivity {
         spinner.setAdapter(adapter);
     }
 
-    //display username
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //  Show cached deals first (for fast loading)
+        if (!cachedDeals.isEmpty()) {
+            allDeals.clear();
+            allDeals.addAll(cachedDeals);
+            dealAdapter.notifyDataSetChanged();
+        }
+
+        // Then fetch new deals from Firebase in background
+        refreshDeals();
+    }
+
+    // Display username + banks
     private void fetchUserData() {
         String uid = mAuth.getCurrentUser().getUid();
 
@@ -155,16 +174,18 @@ public class Dashboard extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                                     selectedBank = spinnerBank.getSelectedItem().toString();
-                                    loadDeals();
+                                    applyFilters();
+                                    refreshDeals();
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {}
                             });
 
-                            loadDeals();
+                            // Load deals initially
+                            onResume();
 
-                            // Start DealSensorService for background deal alerts
+                            // Start DealSensorService
                             Intent serviceIntent = new Intent(Dashboard.this, DealSensorService.class);
                             startService(serviceIntent);
                         }
@@ -179,26 +200,35 @@ public class Dashboard extends AppCompatActivity {
                 });
     }
 
-    //filters
-    private void loadDeals() {
-        CollectionReference dealsRef = db.collection("deals");
+    // fillters
+    private void applyFilters() {
+        allDeals.clear();
+        for (Deal deal : cachedDeals) {
+            boolean matchesBank = selectedBank.equals("Choose bank") || deal.getBank().equalsIgnoreCase(selectedBank);
+            boolean matchesCategory = selectedCategory.equals("Choose category") || deal.getCategory().equalsIgnoreCase(selectedCategory);
+            boolean matchesLocation = selectedLocation.equals("Choose location") || deal.getLocation().equalsIgnoreCase(selectedLocation);
 
-        dealsRef.get().addOnSuccessListener(querySnapshot -> {
-            allDeals.clear();
+            if (userBanks.contains(deal.getBank()) && matchesBank && matchesCategory && matchesLocation) {
+                allDeals.add(deal);
+            }
+        }
+        dealAdapter.notifyDataSetChanged();
+    }
 
+    // get latest deals from firebase
+    private void refreshDeals() {
+        db.collection("deals").get().addOnSuccessListener(querySnapshot -> {
+            List<Deal> freshDeals = new ArrayList<>();
             for (QueryDocumentSnapshot doc : querySnapshot) {
                 Deal deal = doc.toObject(Deal.class);
-
-                boolean matchesBank = selectedBank.equals("Choose bank") || deal.getBank().equalsIgnoreCase(selectedBank);
-                boolean matchesCategory = selectedCategory.equals("Choose category") || deal.getCategory().equalsIgnoreCase(selectedCategory);
-                boolean matchesLocation = selectedLocation.equals("Choose location") || deal.getLocation().equalsIgnoreCase(selectedLocation);
-
-                if (userBanks.contains(deal.getBank()) && matchesBank && matchesCategory && matchesLocation) {
-                    allDeals.add(deal);
-                }
+                freshDeals.add(deal);
             }
 
-            dealAdapter.notifyDataSetChanged();
+
+            cachedDeals.clear();
+            cachedDeals.addAll(freshDeals);
+
+            applyFilters();
         }).addOnFailureListener(e -> {
             Toast.makeText(this, "Failed to load deals", Toast.LENGTH_SHORT).show();
         });

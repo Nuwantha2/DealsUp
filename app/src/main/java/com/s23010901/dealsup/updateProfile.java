@@ -33,6 +33,7 @@ public class updateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
+        //connect UI
         editUsername = findViewById(R.id.editusername);
         editPassword = findViewById(R.id.editpassword);
         updateBtn = findViewById(R.id.button);
@@ -57,10 +58,12 @@ public class updateProfile extends AppCompatActivity {
                 return;
             }
 
+
             if (!newName.equals(currentName)) {
                 updateName(newName);
             }
 
+            //new password validation
             if (!newPassword.equals("******") && newPassword.length() >= 6) {
                 updatePassword(newPassword);
             } else if (!newPassword.equals("******")) {
@@ -69,6 +72,7 @@ public class updateProfile extends AppCompatActivity {
         });
     }
 
+    //load username
     private void loadCurrentName() {
         if (currentUser == null) return;
 
@@ -86,6 +90,7 @@ public class updateProfile extends AppCompatActivity {
                         Toast.makeText(this, "Failed to load name", Toast.LENGTH_SHORT).show());
     }
 
+    //update username
     private void updateName(String newName) {
         if (currentUser == null) return;
 
@@ -102,6 +107,7 @@ public class updateProfile extends AppCompatActivity {
                         Toast.makeText(this, "Failed to update name", Toast.LENGTH_SHORT).show());
     }
 
+    //update password
     private void updatePassword(String newPassword) {
         if (currentUser == null) return;
 
@@ -114,6 +120,7 @@ public class updateProfile extends AppCompatActivity {
                         Toast.makeText(this, "Failed to update password", Toast.LENGTH_SHORT).show());
     }
 
+    //bottom navigation
     private void setupBottomNav() {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setSelectedItemId(R.id.nav_profile);

@@ -34,7 +34,7 @@ public class chooseCards extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Reference UI elements
+        // bank cards UI elements
         bankButtons.put("BOC", findViewById(R.id.btnBOC));
         bankButtons.put("PB", findViewById(R.id.btnPB));
         bankButtons.put("Sampath", findViewById(R.id.btnSampath));
@@ -63,7 +63,7 @@ public class chooseCards extends AppCompatActivity {
         });
     }
 
-    //change button color after
+    //change button color after selecting
     private void toggleBankSelection(String bank) {
         boolean selected = !selectedBanks.getOrDefault(bank, false);
         selectedBanks.put(bank, selected);
@@ -82,6 +82,7 @@ public class chooseCards extends AppCompatActivity {
             return;
         }
 
+        //save selected cards into firebase
         String uid = mAuth.getCurrentUser().getUid();
 
         List<String> selectedCardList = new ArrayList<>();

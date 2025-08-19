@@ -37,6 +37,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
     private static final double RADIUS_KM = 10.0;
 
     @Override
+    //create map
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
@@ -62,6 +63,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
     }
 
 
+    //get location
     private void fetchLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) return;
@@ -83,6 +85,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         });
     }
 
+    //load deals
     private void loadUserBanksAndDeals() {
         String uid = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getUid() : null;
         if (uid == null) {
@@ -101,6 +104,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
                 });
     }
 
+    //check and load nearby deals
     private void loadNearbyDeals() {
         if (userLocation == null) return;
 

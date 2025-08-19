@@ -5,7 +5,7 @@ public class NotificationItem {
     private String message;
 
     public NotificationItem() {
-        // Firestore requires a public no-arg constructor
+        // Fiirebase empty constructor
     }
 
     public NotificationItem(String title, String message) {

@@ -34,6 +34,7 @@ public class add extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+        //get deals details
         etTitle = findViewById(R.id.etTitle);
         etDescription = findViewById(R.id.etDescription);
         etImageUrl = findViewById(R.id.etImageUrl);
@@ -54,19 +55,20 @@ public class add extends AppCompatActivity {
     private void setupSpinners() {
         ArrayAdapter<String> bankAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item,
-                Arrays.asList("Select Bank", "HNB", "BOC", "Sampath", "NDB", "Commercial"));
+                Arrays.asList("Select Bank", "HNB", "BOC", "Sampath", "NDB", "Commercial")); // bank selector dropdown
         bankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBank.setAdapter(bankAdapter);
 
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item,
-                Arrays.asList("Select Category", "Food", "Clothing", "Electronics", "Services"));
+                Arrays.asList("Select Category", "Food", "Clothing", "Electronics", "Services")); //category selector dropdown
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(categoryAdapter);
     }
 
     //location selector
     private void setupLocationPicker() {
+        //pick location
         btnPickLocation.setOnClickListener(v -> {
             Intent intent = new Intent(add.this, locationPicker.class);
             startActivityForResult(intent, LOCATION_REQUEST_CODE);
@@ -77,6 +79,7 @@ public class add extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        //collect location using latitude and longitude
         if (requestCode == LOCATION_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             selectedLat = data.getDoubleExtra("latitude", 0.0);
             selectedLng = data.getDoubleExtra("longitude", 0.0);
@@ -86,6 +89,7 @@ public class add extends AppCompatActivity {
     }
 
     private void submitDeal() {
+        //submit deal to firebase
         String title = etTitle.getText().toString().trim();
         String description = etDescription.getText().toString().trim();
         String imageUrl = etImageUrl.getText().toString().trim();

@@ -28,7 +28,7 @@ public class locationPicker extends AppCompatActivity implements OnMapReadyCallb
             mapFragment.getMapAsync(this);
         }
 
-        //location selection confirmation button
+        //location collection
         FloatingActionButton btnConfirm = findViewById(R.id.btnConfirmLocation);
         btnConfirm.setOnClickListener(v -> {
             if (selectedLatLng != null) {
@@ -43,7 +43,7 @@ public class locationPicker extends AppCompatActivity implements OnMapReadyCallb
         });
     }
 
-    //record selected location
+    //store selected location
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         this.mMap = googleMap;

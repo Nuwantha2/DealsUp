@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        //connect UI
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -66,7 +67,7 @@ public class Register extends AppCompatActivity {
     }
 
 
-    //field validations
+    //Validations
     private void validateAndRegister() {
         String name = etName.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
@@ -149,7 +150,7 @@ public class Register extends AppCompatActivity {
         }
     }
 
-    //google signin
+    //google signup
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
